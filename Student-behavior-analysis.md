@@ -73,6 +73,7 @@ df_class['raisedhands'] = pd.cut(df_class.raisedhands, bins=3, labels=np.arange(
 df_class.groupby(['raisedhands'])['Class'].value_counts(normalize=True)
 ```
 OUTPUT:
+
 raisedhands  Class
 0            L        0.534314
              M        0.392157
@@ -92,6 +93,7 @@ df_class['VisITedResources'] = pd.cut(df_class.VisITedResources, bins=3, labels=
 df_class.groupby(['VisITedResources'])['Class'].value_counts(normalize=True)
 ```
 OUTPUT:
+
 VisITedResources  Class
 0                 L        0.656250
                   M        0.293750
@@ -110,6 +112,7 @@ df_class['AnnouncementsView'] = pd.cut(df_class.AnnouncementsView, bins=3, label
 df_class.groupby(['AnnouncementsView'])['Class'].value_counts(normalize=True)
 ```
 OUTPUT:
+
 AnnouncementsView  Class
 0                  L        0.468354
                    M        0.388186
@@ -128,6 +131,7 @@ df_class['Discussion'] = pd.cut(df_class.Discussion, bins=3, labels=np.arange(3)
 df_class.groupby(['Discussion'])['Class'].value_counts(normalize=True)
 ```
 OUTPUT:
+
 iscussion  Class
 0           M        0.416290
             L        0.371041
@@ -146,6 +150,7 @@ Relation between StudentAbsenceDays and classification
 df_class.groupby(['StudentAbsenceDays'])['Class'].value_counts(normalize=True)
 ```
 OUTPUT:
+
 tudentAbsenceDays  Class
 Above-7             L        0.607330
                     M        0.371728
@@ -163,6 +168,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['raisedhands'])
 plt.show()
 ```
 OUTPUT:
+
 <img width="465" alt="2" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/fc1395b9-9039-4d82-99a4-cc3020eec10e">
 
 
@@ -172,6 +178,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['VisITedResources'])
 plt.show()
 ```
 OUTPUT:
+
 <img width="440" alt="3" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/6545d268-5bc5-46ed-84e7-75537b3c0c57">
 
 
@@ -181,6 +188,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['AnnouncementsView'])
 plt.show()
 ```
 OUTPUT:
+
 <img width="435" alt="4" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/c3a295d3-cf44-4dbc-b51c-869c0b93cd19">
 
 
@@ -190,6 +198,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['Discussion'])
 plt.show()
 ```
 OUTPUT:
+
 <img width="465" alt="5" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/beee2be5-ecd8-49b3-aece-c8fd54208823">
 
 
@@ -199,6 +208,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['StudentAbsenceDays'])
 plt.show()
 ```
 OUTPUT:
+
 <img width="476" alt="6" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/3f2a60fd-1afb-41ff-8608-767580755f5e">
 
 ## Correlation 
@@ -207,6 +217,7 @@ correlation = df_class[['raisedhands','VisITedResources','AnnouncementsView','Di
 correlation
 ```
 OUTPUT:
+
 <img width="427" alt="7" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/68ae11c4-2e2a-4e9d-ac2d-c796edc880ee">
 
 
@@ -228,6 +239,7 @@ plt.ylabel('WSS') #within cluster sum of squares
 plt.show()
 ```
 OUTPUT:
+
 <img width="501" alt="8" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/5244582e-42ee-4b3f-908a-23b71dc60991">
 
 
@@ -253,7 +265,8 @@ plt.legend()
 plt.show()
 ```
 OUTPUT:
+
 <img width="492" alt="9" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/74a0b10c-222a-43db-8540-f99e2dd6acbd">
 
-OUTPUT:
+
 
