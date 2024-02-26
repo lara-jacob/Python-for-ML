@@ -214,7 +214,8 @@ sns.boxplot(y=df_class['Resourse Person'],x=df_class['Content Quality'])
 plt.show()
 ```
 OUTPUT:
-![rp,cq](https://github.com/lara-jacob/Python-for-ML/assets/160465136/ffdfeca4-d1bd-4dfa-b232-db6c6f29f488)
+![1](https://github.com/lara-jacob/Python-for-ML/assets/160465136/49c0a540-c515-4d66-83b2-2ac1835cdea6)
+
 
 #### 2)creating boxplot on Effectiveness v/s Resource person
 ```python
@@ -222,7 +223,8 @@ sns.boxplot(y=df_class['Resourse Person'],x=df_class['Content Quality'])
 plt.show()
 ```
 OUTPUT:
-![rp ef](https://github.com/lara-jacob/Python-for-ML/assets/160465136/a389a63c-7e74-452b-9f79-fc91b86ddeb8)
+![2](https://github.com/lara-jacob/Python-for-ML/assets/160465136/7caf2001-8d9a-4297-80da-e3dbbb311a93)
+
 
 #### 3)creating boxplot on Relevance v/s Resource person
 ```python
@@ -230,7 +232,7 @@ sns.boxplot(y=df_class['Resourse Person'],x=df_class['Content Quality'])
 plt.show()
 ```
 OUTPUT:
-![rp , re](https://github.com/lara-jacob/Python-for-ML/assets/160465136/ba6fe0bb-050d-443c-8c84-fe9ec373d69e)
+![3](https://github.com/lara-jacob/Python-for-ML/assets/160465136/1df5b62b-53df-452a-987f-65260a20e4ea)
 
 #### 4)creating boxplot on Overall Organization v/s Resource person
 ```python
@@ -238,14 +240,16 @@ sns.boxplot(y=df_class['Resourse Person'],x=df_class['Content Quality'])
 plt.show()
 ```
 OUTPUT:
-![rp,oo](https://github.com/lara-jacob/Python-for-ML/assets/160465136/feeaee79-c837-4ef1-9237-fbfc52971823)
+![4](https://github.com/lara-jacob/Python-for-ML/assets/160465136/0e948188-2b0c-4838-bdef-89de903027d2)
+
 #### 5)creating boxplot on Expertise v/s Resource person
 ```
 sns.boxplot(y=df_class['Resourse Person'],x=df_class['Expertise'])
 plt.show()
 ```
 OUTPUT:
-![exp vs rp](https://github.com/lara-jacob/Python-for-ML/assets/160465136/eb1ae4e1-afe0-447f-818e-785e54d0d3e6)
+<img width="576" alt="5" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/72755431-a6b3-4a9a-ab4d-5400619d75d5">
+
 
 #### 6)creating boxplot on Branch  v/s Content quality
 
@@ -254,7 +258,7 @@ sns.boxplot(y=df_class['Resourse Person'],x=df_class['Content Quality'])
 plt.show()
 ```
 OUTPUT:
-![branch cq](https://github.com/lara-jacob/Python-for-ML/assets/160465136/ee780038-893c-4ba5-8b29-d556277b62f9)
+![6](https://github.com/lara-jacob/Python-for-ML/assets/160465136/c7080787-5875-482f-9ce3-b7547d52602d)
 
 ### Step-6:Unsupervised machine learning
 Using K-means Clustering to identify segmentation over student's satisfaction.
