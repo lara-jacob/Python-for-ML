@@ -23,7 +23,9 @@ df_class=pd.read_csv("Student behaviour.csv")
 df_class.head()
 ```
 OUTPUT:
+
 <img width="584" alt="1 1" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/021447d7-947a-4ed6-9bef-829a2d66cc3c">
+
 <img width="512" alt="1 2" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/37623c3b-a81f-45b4-9245-9a7aed781882">
 
 
