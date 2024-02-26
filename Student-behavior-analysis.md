@@ -22,6 +22,10 @@ The dataset can be in the form of csv file or may be directly from another sites
 df_class=pd.read_csv("Student behaviour.csv")
 df_class.head()
 ```
+OUTPUT:
+<img width="584" alt="1 1" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/021447d7-947a-4ed6-9bef-829a2d66cc3c">
+<img width="512" alt="1 2" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/37623c3b-a81f-45b4-9245-9a7aed781882">
+
 
 ## Optimizing the dataset
 
@@ -29,9 +33,36 @@ In pandas, the info() method is used to get a concise summary of a DataFrame. Th
 ```
 df_class.info()
 ```
+OUTPUT:
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 480 entries, 0 to 479
+Data columns (total 17 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   gender                    480 non-null    object
+ 1   NationalITy               480 non-null    object
+ 2   PlaceofBirth              480 non-null    object
+ 3   StageID                   480 non-null    object
+ 4   GradeID                   480 non-null    object
+ 5   SectionID                 480 non-null    object
+ 6   Topic                     480 non-null    object
+ 7   Semester                  480 non-null    object
+ 8   Relation                  480 non-null    object
+ 9   raisedhands               480 non-null    int64 
+ 10  VisITedResources          480 non-null    int64 
+ 11  AnnouncementsView         480 non-null    int64 
+ 12  Discussion                480 non-null    int64 
+ 13  ParentAnsweringSurvey     480 non-null    object
+ 14  ParentschoolSatisfaction  480 non-null    object
+ 15  StudentAbsenceDays        480 non-null    object
+ 16  Class                     480 non-null    object
+dtypes: int64(4), object(13)
+memory usage: 63.9+ KB
+
 removing unnecessary columns
 ```
-df_class = df_class.drop(['NationalITy','PlaceofBirth','StageID','GradeID','SectionID','Topic','Semester','Relation'],axis=1)
+df_class= df_class.drop(['NationalITy','PlaceofBirth','StageID','GradeID','SectionID','Topic','Semester','Relation'],axis=1)
 ```
 ## Exploratory Data Analysis
 Relation between raising hands and classification
@@ -130,6 +161,8 @@ sns.boxplot(y=df_class['Class'],x=df_class['raisedhands'])
 plt.show()
 ```
 OUTPUT:
+<img width="465" alt="2" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/fc1395b9-9039-4d82-99a4-cc3020eec10e">
+
 
 2)creating boxplot on VisITedResources v/s Class
 ```
@@ -137,6 +170,8 @@ sns.boxplot(y=df_class['Class'],x=df_class['VisITedResources'])
 plt.show()
 ```
 OUTPUT:
+<img width="440" alt="3" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/6545d268-5bc5-46ed-84e7-75537b3c0c57">
+
 
 3)creating boxplot on AnnouncementsView v/s Class
 ```
@@ -144,6 +179,7 @@ sns.boxplot(y=df_class['Class'],x=df_class['AnnouncementsView'])
 plt.show()
 ```
 OUTPUT:
+<img width="435" alt="4" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/c3a295d3-cf44-4dbc-b51c-869c0b93cd19">
 
 
 4)creating boxplot on Discussion v/s Class
@@ -152,18 +188,25 @@ sns.boxplot(y=df_class['Class'],x=df_class['Discussion'])
 plt.show()
 ```
 OUTPUT:
+<img width="465" alt="5" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/beee2be5-ecd8-49b3-aece-c8fd54208823">
+
 
 5)creating boxplot on StudentAbsenceDays v/s Class
 ```
 sns.boxplot(y=df_class['Class'],x=df_class['StudentAbsenceDays'])
 plt.show()
 ```
+OUTPUT:
+<img width="476" alt="6" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/3f2a60fd-1afb-41ff-8608-767580755f5e">
+
 ## Correlation 
 ```
 correlation = df_class[['raisedhands','VisITedResources','AnnouncementsView','Discussion']].corr(method='pearson')
 correlation
 ```
 OUTPUT:
+<img width="427" alt="7" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/68ae11c4-2e2a-4e9d-ac2d-c796edc880ee">
+
 
 ## Elbow Method
 
@@ -182,6 +225,9 @@ plt.xlabel('N of Clusters')
 plt.ylabel('WSS') #within cluster sum of squares
 plt.show()
 ```
+OUTPUT:
+<img width="501" alt="8" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/5244582e-42ee-4b3f-908a-23b71dc60991">
+
 
 ## k-Means Clustering
 ```
@@ -204,5 +250,8 @@ plt.legend()
 
 plt.show()
 ```
+OUTPUT:
+<img width="492" alt="9" src="https://github.com/lara-jacob/Python-for-ML/assets/160465136/74a0b10c-222a-43db-8540-f99e2dd6acbd">
+
 OUTPUT:
 
