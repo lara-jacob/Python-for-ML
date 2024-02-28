@@ -464,3 +464,145 @@ mae = mean_absolute_erroRMSE -->  4103.113944084137r(y_test, y_pred)
 print("MAE --> ", mae)
 ```
 MAE -->  3195.0312395000437
+
+
+
+# LOGISTIC REGRESSION
+
+### Definition
+Logistic regression is a statistical method used for binary classification tasks, where the goal is to predict the probability that a given input belongs to one of two possible classes. It is widely used in various fields such as healthcare, finance, and marketing for its simplicity and interpretability.
+
+### How Logistic Regression Works:
+
+1)Model Representation:
+
+In logistic regression, we model the probability of the positive class (e.g., class 1) using a logistic function, also known as the sigmoid function.
+The sigmoid function maps any real-valued number to the range [0, 1], making it suitable for representing probabilities.
+
+2)Hypothesis Function:
+
+The hypothesis function in logistic regression is defined as:
+hθ(x) = g(θ^T * x)
+where:
+hθ(x) is the predicted probability that x belongs to the positive class,
+θ is the parameter vector (weights),
+g(z) is the sigmoid function, defined as 1 / (1 + e^(-z))
+
+3)Decision Boundary:
+
+In logistic regression, the decision boundary is a hyperplane that separates the feature space into regions where different classes are predicted.
+For binary classification, the decision boundary is where hθ(x) = 0.5, which corresponds to θ^T * x = 0.
+
+4)Model Training:
+
+During training, the parameters θ are learned from the training data using optimization algorithms such as gradient descent.
+The objective is to minimize a cost function, such as the cross-entropy loss, which measures the difference between the predicted probabilities and the actual class labels.
+
+### Advantages of Logistic Regression:
+Interpretability: Logistic regression provides interpretable results, as the coefficients can be directly interpreted as the effect of each feature on the probability of the positive class.
+#### Efficiency: 
+Logistic regression is computationally efficient and can handle large datasets with a large number of features.
+#### Regularization: 
+Techniques such as L1 and L2 regularization can be applied to logistic regression to prevent overfitting and improve generalization performance.
+
+### Limitations of Logistic Regression:
+#### Linear Decision Boundary:
+Logistic regression assumes a linear decision boundary, which may not be suitable for complex relationships between features and the target variable.
+#### Assumption of Independence: 
+Logistic regression assumes that features are independent of each other, which may not always hold true in practice.
+#### Limited to Binary Classification: 
+Logistic regression is inherently a binary classifier and may not be directly applicable to multi-class classification problems without modification.
+
+## SUMMARY:
+In summary, logistic regression is a powerful and widely used method for binary classification tasks, offering a balance between simplicity, efficiency, and interpretability. However, it is important to understand its assumptions and limitations when applying it to real-world problems.
+
+## EXAMPLE:  Key Elements of Classification Model Using Logistic Regression and the Iris Dataset
+
+
+### Importing Libraries
+```
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Load Iris dataset
+iris = sns.load_dataset('iris')
+
+# Display the first few rows of the dataset
+print(iris.head())
+```
+OUTPUT:
+
+   sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+​
+### Step 1. Data Preparation
+```
+#Features (X) and target (y)
+X = iris.drop('species', axis=1)
+y = iris['species']
+
+#Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+### Step 2. Model Training
+
+```
+# Initialize the Logistic Regression model
+logreg = LogisticRegression(max_iter=1000)
+
+# Train the model on the training data
+logreg.fit(X_train, y_train)
+```
+
+### Step 3. Model Prediction
+
+```
+# Make predictions on the test set
+y_pred = logreg.predict(X_test)
+```
+
+### Step 4. Model Evaluation
+
+```
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+classification_rep = classification_report(y_test, y_pred)
+
+# Display evaluation metrics
+print(f'Accuracy: {accuracy:.2f}')
+print('Confusion Matrix:')
+print(conf_matrix)
+print('Classification Report:')
+print(classification_rep)
+```
+
+OUTPUT:
+
+Accuracy: 1.00
+
+Confusion Matrix:
+[[10  0  0]
+ [ 0  9  0]
+ [ 0  0 11]]
+ 
+Classification Report:
+
+            precision    recall  f1-score   support
+
+setosa       1.00      1.00      1.00        10
+versicolor   1.00      1.00      1.00         9
+virginica    1.00      1.00      1.00        11
+
+accuracy                           1.00        30
+macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
+
+​
+
